@@ -1,0 +1,37 @@
+﻿
+
+
+@*@{
+    if (!@User.Identity.IsAuthenticated)
+    {
+        <a class="btn btn-info btn-lg" asp-controller="Account" asp-action="Login" asp-route-returnUrl="@ViewContext.HttpContext.Request.PathAndQuery()">
+            Login
+        </a>
+    }
+
+    else
+
+    {
+        if (@User.HasClaim("Admin", "Admin"))
+        {
+            <a class="btn btn-info btn-lg" asp-controller="Admin" asp-action="Index" asp-route-returnUrl="@ViewContext.HttpContext.Request.PathAndQuery()">
+                <span class="glyphicon glyphicon-shopping-cart">@User.Identity.Name</span>
+            </a>
+        }
+        else if (@User.HasClaim("Moderator", "Moderator"))
+        {
+            <a class="btn btn-info btn-lg" asp-controller="Order" asp-action="ModeratorList" asp-route-returnUrl="@ViewContext.HttpContext.Request.PathAndQuery()">
+                <span class="glyphicon glyphicon-shopping-cart">@User.Identity.Name</span>
+            </a>
+        }
+
+        else
+        {
+            <a class="btn btn-info btn-lg" asp-controller="Order" asp-action="List" asp-route-returnUrl="@ViewContext.HttpContext.Request.PathAndQuery()">
+                <span class="glyphicon glyphicon-shopping-cart">@User.Identity.Name</span>
+            </a>
+        }
+    }
+}
+}*@
+

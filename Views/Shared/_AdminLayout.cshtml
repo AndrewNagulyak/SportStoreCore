@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="/node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="/node_modules/fontawesome/css/bootstrap.css" rel="stylesheet" />
+    <style>
+        .input-validation-error {
+            border-color: red;
+            background-color: #fee;
+        }
+    </style>
+</head>
+
+<body class="m-1 p-1">
+    <a asp-controller="Account" asp-action="Logout" class="btn btn-primary">Logout</a>
+
+    <div class="bg-info p-2"><h4>@ViewBag.Title</h4></div>
+    @if (TempData["message"] != null)
+    {
+        <div class="alert alert-success">@TempData["message"]</div>
+    }
+    @RenderBody()
+</body>
+</html>

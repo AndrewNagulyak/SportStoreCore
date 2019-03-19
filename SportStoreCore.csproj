@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="obj\node_modules\**" />
+    <Compile Remove="obj\obj\**" />
+    <Compile Remove="wwwroot\node_modules\**" />
+    <Compile Remove="wwwroot\obj\**" />
+    <Content Remove="obj\node_modules\**" />
+    <Content Remove="obj\obj\**" />
+    <Content Remove="wwwroot\node_modules\**" />
+    <Content Remove="wwwroot\obj\**" />
+    <EmbeddedResource Remove="obj\node_modules\**" />
+    <EmbeddedResource Remove="obj\obj\**" />
+    <EmbeddedResource Remove="wwwroot\node_modules\**" />
+    <EmbeddedResource Remove="wwwroot\obj\**" />
+    <None Remove="obj\node_modules\**" />
+    <None Remove="obj\obj\**" />
+    <None Remove="wwwroot\node_modules\**" />
+    <None Remove="wwwroot\obj\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Cart\Index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="bootstrap" Version="4.3.1" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.4" />
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Cart\Index.cshtml" />
+  </ItemGroup>
+
+</Project>
