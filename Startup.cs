@@ -47,8 +47,16 @@ namespace SportStoreCore
             services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddTransient<IOrderRepository, EfOrderRepository>();
-        
-            
+
+            services.AddAuthorization(opt =>
+            {
+                opt.AddPolicy("Admins", policy =>
+                {
+                    policy.RequireClaim("Admin");
+                    policy.RequireClaim("Moderator");
+                });
+                opt.AddPolicy("Moderator", policy => policy.RequireClaim("Moderator"));
+            });
             services.AddIdentity<IdentityUser, IdentityRole>(opts => {
 
                 }).AddEntityFrameworkStores<AppIdentityDbContext>()
