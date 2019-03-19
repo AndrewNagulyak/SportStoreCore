@@ -33,7 +33,7 @@ namespace SportStoreCore
         {
             services.Add(new ServiceDescriptor(typeof(IHitCounterService),new HitCounter (_rootpath)));
             services.AddAuthentication().AddGoogle(opts => {
-                
+
                 opts.ClientId = "427325496869-jln91p8k9gi3pv4746ehd7q1bos8smve.apps.googleusercontent.com";
                 opts.ClientSecret = "vxuFWFWMPKo7TpiecGo9Oj5M";
             });
