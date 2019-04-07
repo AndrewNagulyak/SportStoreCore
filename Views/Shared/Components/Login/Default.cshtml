@@ -1,7 +1,7 @@
 ﻿
 
 
-@*@{
+@{
     if (!@User.Identity.IsAuthenticated)
     {
         <a class="btn btn-info btn-lg" asp-controller="Account" asp-action="Login" asp-route-returnUrl="@ViewContext.HttpContext.Request.PathAndQuery()">
@@ -33,5 +33,5 @@
         }
     }
 }
-}*@
+}
 
